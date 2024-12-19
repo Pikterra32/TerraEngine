@@ -16,4 +16,8 @@ private:
     bool running;
     SDL_Window *Window;
     SDL_Renderer *Renderer;
+
+    SDL_Texture* m_pTexture;
+    SDL_Rect m_sourceRectangle;
+    SDL_Rect m_destinationRectangle;
 };

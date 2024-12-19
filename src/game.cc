@@ -1,10 +1,22 @@
 #include "game.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_video.h>
 
 Game::Game() {}
 Game::~Game() {}
 
 int Game::init(const char * title, int posX, int posY, int width, int height) {
+
+    SDL_Surface* pTempSurface = SDL_LoadBMP("/home/gmart/Documents/Code/TerraEngine/rsrc/test.bmp");
+    m_pTexture = SDL_CreateTextureFromSurface(Renderer, pTempSurface);
+    SDL_FreeSurface(pTempSurface);
+    SDL_QueryTexture(m_pTexture, NULL, NULL,
+    &m_sourceRectangle.w, &m_sourceRectangle.h);
+    m_destinationRectangle.x = m_sourceRectangle.x = 0;
+    m_destinationRectangle.y = m_sourceRectangle.y = 0;
+    m_destinationRectangle.w = m_sourceRectangle.w;
+    m_destinationRectangle.h = m_sourceRectangle.h;
+
     Window = 0;
     Renderer = 0;
 
@@ -24,8 +36,10 @@ int Game::init(const char * title, int posX, int posY, int width, int height) {
 }
 
 void Game::render() {
-    SDL_SetRenderDrawColor(Renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(Renderer, 255, 0, 0, 255);
     SDL_RenderClear(Renderer);
+    SDL_RenderCopy(Renderer, m_pTexture, &m_sourceRectangle,
+    &m_destinationRectangle);
     SDL_RenderPresent(Renderer);
 }
 
