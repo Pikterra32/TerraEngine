@@ -1,2 +1,2 @@
 # TerraEngine
-Game engine with raylib at its core 
+game engine made with RayLib
