@@ -1,4 +1,3 @@
-#include "raylib.h"
 #include "Game.h"
 
 Game gamecontext;
@@ -9,16 +8,14 @@ int main(void)
 
     while (gamecontext.isRunning())
     {
-        BeginDrawing();
+        gamecontext.handleEvents();
 
-        ClearBackground(RAYWHITE);
-
-        DrawText("Congrats! You created your first window!", 0, 200, 20, LIGHTGRAY);
-
-        EndDrawing();
+        gamecontext.getInputs();
+        gamecontext.physicStep();
+        gamecontext.render();
     }
 
-    CloseWindow();
+    gamecontext.closeGame();
 
     return 0;
 }

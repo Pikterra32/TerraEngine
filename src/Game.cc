@@ -9,9 +9,19 @@ void Game::GameInit(const int width, const int height, const char* title, int fp
 
 void Game::getInputs() {};
 
-void Game::physicSetp() {};
+void Game::physicStep() {};
 
-void Game::render() {};
+void Game::render() {
+    this->renderEngine.render();
+};
+
+void Game::pause() {
+    this->running = false;
+}
+
+void Game::resume() {
+    this->running = true;
+}
 
 void Game::handleEvents() {
     if (WindowShouldClose()) {
@@ -21,4 +31,8 @@ void Game::handleEvents() {
 
 bool Game::isRunning() {
     return this->running;
+}
+
+void Game::closeGame() {
+    CloseWindow();
 }
