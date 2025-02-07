@@ -1,7 +1,6 @@
 #include "RenderElement.h"
 #include "raylib.h"
 #include "Renderer.h"
-#include "../Utility/Colors.h"
 
 void Renderer::addToQueue(RenderElement element) {
     this->renderQueue.push_back(element);
@@ -20,8 +19,8 @@ void Renderer::removeFromQueue(int id) {
 void Renderer::render() {
     BeginDrawing();
     //
-    for (RenderElement element : this->renderQueue){
-        switch (element.getType()){
+    for (RenderElement element : this->renderQueue) {
+        switch (element.getType()) {
             case Shape_Rect:
                 DrawRectangle(element.posX, element.posY, element.width, element.height, GetColor(element.hexColor));
                 break;
@@ -39,6 +38,8 @@ void Renderer::render() {
                 v2.x = element.v2.x; v2.y = element.v2.y;
                 v3.x = element.v3.x; v3.y = element.v3.y;
                 DrawTriangle(v1, v2, v3, GetColor(element.hexColor));
+                break;
+            case Undefined:
                 break;
         }
     }

@@ -1,3 +1,4 @@
+#include "Objects/ObjectManager.h"
 #include "Renderer/Renderer.h"
 #include <vector>
 #pragma once
@@ -19,5 +20,7 @@ public:
     bool isRunning();
 private:
     Renderer renderEngine;
+    ObjectManager objectEngine;
+
     bool running;
 };

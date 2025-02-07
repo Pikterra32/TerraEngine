@@ -1,0 +1,25 @@
+- clean.sh : clean project tree to only leave source files
+- run.sh   : compile and run project
+
+- src \ : source files
+    - Main.cc : main engine loop
+    - Game.cc : main engine API
+
+    - Utility \ : various useful classes and variables
+        - Colors.h : #define of various hexcode for colors, extracted from raylib
+        - Vector.cc : implementation of 2D vectors
+
+    - Renderer \ : renderer API
+        - Renderer.cc : main renderer runner
+        - RenderElement.cc : contain class of elements to be rendered
+
+    - Objects \ : engine objects API
+        - ObjectManager.cc : interface to access every object classes
+        - BaseObject.cc : base object class [ID, NAME]
+        - PhysicalObject.cc : object class for objects that have a physical apparence [X position, Y position]
+        - SolidObject.cc : immovable physical object
+
+- res \ : ressource files
+
+- build \ : build output
+    - TerraEngine : engine binary (ELF)

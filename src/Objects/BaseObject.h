@@ -2,14 +2,11 @@
 
 class BaseObject {
 public:
-    BaseObject(const char* name);
+    explicit BaseObject(const char* name);
 
     int getId();
 
     const char* name;
-
-    int posX;
-    int posY;
 private:
-    int ID;
+    unsigned int ID;
 };

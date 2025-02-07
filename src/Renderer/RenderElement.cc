@@ -7,15 +7,19 @@ RenderElement::RenderElement
     float size ,
     int width ,int height,
     float sizeH, float sizeV,
-    vec2 v1, vec2 v2, vec2 v3
+    vec2 v1, vec2 v2, vec2 v3,
+    int hexColor
 ) {
-    static int id = 0;
+    static unsigned int id = 0;
     this->ID = id;
     id++;
 
     this->posX = posX;
     this->posY = posY;
-    switch (type){
+
+    this->hexColor = hexColor;
+
+    switch (type) {
         case Shape_Circle:
             this->size = size;
             break;
@@ -31,6 +35,8 @@ RenderElement::RenderElement
             this->v1 = v1;
             this->v2 = v2;
             this->v3 = v3;
+            break;
+        case Undefined:
             break;
     }
 }

@@ -1,7 +1,12 @@
 #pragma once
-#include "BaseObject.h"
+#include "../Renderer/Renderer.h"
+#include "PhysicalObject.h"
 
-class SolidObject : public BaseObject {
-    using BaseObject::BaseObject;
+class SolidObject : public PhysicalObject {
+public:
+    SolidObject(const char *name, int posx, int posy, RenderElement apparence);
+
+    RenderElement getApparence();
 private:
+    RenderElement apparence;
 };

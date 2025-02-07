@@ -5,7 +5,7 @@ int BaseObject::getId() {
 }
 
 BaseObject::BaseObject(const char* name) {
-    static int id = 0;
+    static unsigned int id = 0;
     this->name = name;
     this->ID = id;
     id++;

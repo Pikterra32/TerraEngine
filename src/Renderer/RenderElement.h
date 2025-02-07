@@ -3,18 +3,20 @@
 
 enum RenderType {
     Shape_Circle = 0, Shape_Rect = 1, Shape_Ellipse = 2, Shape_Triangle = 3,
+    Undefined = -1,
 };
 
 class RenderElement {
 public:
     RenderElement
     (
-        RenderType type,
+        RenderType type = Undefined,
         int posX = 0, int posY = 0,
         float size = 0,
         int width = 0, int height = 0,
         float sizeH = 0.0, float sizeV = 0.0,
-        vec2 v1 = vec2(), vec2 v2 = vec2(), vec2 v3 = vec2()
+        vec2 v1 = vec2(), vec2 v2 = vec2(), vec2 v3 = vec2(),
+        int hexColor = 0
     );
     int getId();
     RenderType getType();
