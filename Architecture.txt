@@ -12,12 +12,14 @@
     - Renderer \ : renderer API
         - Renderer.cc : main renderer runner
         - RenderElement.cc : contain class of elements to be rendered
+        - RenderTyoes.h : containes enum for render elements types
 
     - Objects \ : engine objects API
         - ObjectManager.cc : interface to access every object classes
         - BaseObject.cc : base object class [ID, NAME]
         - PhysicalObject.cc : object class for objects that have a physical apparence [X position, Y position]
         - SolidObject.cc : immovable physical object
+        - ObjectTypes.h : containes enum for object types
 
 - res \ : ressource files
 

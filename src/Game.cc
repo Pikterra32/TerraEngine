@@ -4,6 +4,7 @@
 void Game::GameInit(const int width, const int height, const char* title, int fps) {
     InitWindow(width, height, title);
     SetTargetFPS(fps);
+    this->objectEngine.renderEngine = &this->renderEngine;
     this->running = true;
 };
 

@@ -5,10 +5,13 @@
 
 class ObjectManager {
 public:
-    void createObject(ObjectTypes type, const char* name, RenderType shape, Renderer* renderer);
+    void createObject(ObjectTypes type, const char* name);
     void deleteObject(int id);
 
-    void accessObject(int id);
+    int* accessObject(int id);
+    int* accessLatest();
+
+    Renderer* renderEngine;
 private:
-    std::vector<SolidObject> solidOList;
+    std::vector<int*> objectList;
 };

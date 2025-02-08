@@ -2,18 +2,33 @@
 #include "raylib.h"
 #include "Renderer.h"
 
+RenderElement* Renderer::accessLatest() {
+    return &this->renderQueue.back();
+}
+
+RenderElement* Renderer::access(int id) {
+    for (int i = 0; i < this->renderQueue.size(); i++) {
+        RenderElement* current = &this->renderQueue[i];
+        if (current->getId() == id) {
+            return current;
+        }
+    }
+    return 0;
+}
+
 void Renderer::addToQueue(RenderElement element) {
     this->renderQueue.push_back(element);
 }
 
 void Renderer::removeFromQueue(int id) {
     for (int i = 0; i < this->renderQueue.size(); i++) {
-        RenderElement current = this->renderQueue[i];
-        if (current.getId() == id) {
+        RenderElement* current = &this->renderQueue[i];
+        if (current->getId() == id) {
             this->renderQueue.erase(this->renderQueue.begin() + i);
             return;
         }
     }
+    return;
 }
 
 void Renderer::render() {

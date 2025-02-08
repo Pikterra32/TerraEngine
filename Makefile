@@ -2,10 +2,10 @@ Binary: Game Main Objects Renderer Utility
 	g++ build/game.o build/main.o build/objects.o build/renderengine.o build/vec.o -lraylib -o build/TerraEngine
 
 Game:
+	mkdir -p build
 	g++ src/Game.cc -c -o build/game.o
 
 Main:
-	mkdir -p build
 	g++ src/Main.cc -c -o build/main.o
 
 Objects:
