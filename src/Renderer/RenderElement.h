@@ -34,7 +34,6 @@ public:
     vec2 v3;
 
     int hexColor;
-
 private:
     RenderType type;
     int ID;

@@ -6,7 +6,9 @@ class SolidObject : public PhysicalObject {
 public:
     SolidObject(const char *name, int posx, int posy, RenderElement apparence);
 
-    RenderElement getApparence();
+    void moveTo(int posX, int posY);
+
+    RenderElement* getApparence();
 private:
     RenderElement apparence;
 };

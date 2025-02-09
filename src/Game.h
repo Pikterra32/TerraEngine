@@ -18,7 +18,17 @@ public:
     void closeGame();
 
     bool isRunning();
+
+    int createObject(ObjectTypes type, const char* name, ApparenceContext* context);
+    void deleteObject(int id);
+    int* accessObject(int id);
+    int* accessLatestObject();
+
+    long int getTick();
+
 private:
+    long int tick;
+
     Renderer renderEngine;
     ObjectManager objectEngine;
 

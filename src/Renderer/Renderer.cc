@@ -1,6 +1,8 @@
 #include "RenderElement.h"
+#include "RenderTypes.h"
 #include "raylib.h"
 #include "Renderer.h"
+#include <iostream>
 
 RenderElement* Renderer::accessLatest() {
     return &this->renderQueue.back();
